@@ -1,4 +1,4 @@
-# AWSServerlessAppWithStepFunction
+# Amazon Web Service - Serverless Application With StepFunctions
 ### Summary
 1.	The Serverless application include a Lambda function to use AWS Rekognition service to detect label and add all those labels with confidence greater than 90 to image metadata 
 which is stored in a DynamoDB table
