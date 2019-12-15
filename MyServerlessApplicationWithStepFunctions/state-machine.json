@@ -1,0 +1,34 @@
+﻿{
+  "Comment": "State Machine",
+  "StartAt": "Validation",
+  "States": {
+    "Validation": {
+      "Type": "Parallel",
+      "End": true,
+      "Branches": [
+        {
+          "StartAt": "ImageRekognition",
+          "States": {
+            "ImageRekognition": {
+              "Type": "Task",
+              "Resource": "${ImageRekognitionTask.Arn}",
+              "End": true
+            }
+          }
+        },
+        {
+          "StartAt": "GenerateThumbnail",
+          "States": {
+            "GenerateThumbnail": {
+              "Type": "Task",
+              "Resource": "${GenerateThumbnailTask.Arn}",
+              "End": true
+            }
+          }
+        }
+
+      ]
+    }
+    
+  }
+}
